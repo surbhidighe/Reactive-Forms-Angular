@@ -1,0 +1,102 @@
+<!--Background wave start-->
+<div class="wave-container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+      fill="rgb(222, 180, 233)"
+      fill-opacity="1"
+      d="M0,128L120,144C240,160,480,192,720,197.3C960,203,1200,181,1320,170.7L1440,160L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
+    ></path>
+  </svg>
+</div>
+<!--Background wave start-->
+<!--main centre div-->
+<div class="main">
+  <!--sidebar section start-->
+  <div class="sidebar_section">
+    <div class="inner_sidebar">
+      <h1>Sample Heading</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+    </div>
+  </div>
+  <!--sidebar section end-->
+  <!--form section start-->
+  <div class="account_form">
+    <form [formGroup]="form">
+      <h4>Create an account</h4>
+      <!--email-->
+      <div class="input">
+        <label for="email">Enter your email</label>
+        <input
+          type="text"
+          id="email"
+          formControlName="email"
+          [class.invalid]="f.email.touched && f.email.invalid"
+        />
+        <span *ngIf="f.email.touched && f.email.invalid" class="alert1">
+          <span *ngIf="f.email.errors?.required">Email is Required</span>
+          <span *ngIf="f.email.errors?.email">Please enter a valid email</span>
+        </span>
+      </div>
+      <!--email-->
+      <!--dob-->
+      <div class="input">
+        <label for="dob">Date of birth (Optional)</label>
+        <input type="date" id="dob" formControlName="dob" value="2000-01-01" />
+      </div>
+      <!--dob-->
+      <!--password-->
+      <div class="input">
+        <label for="password">Choose a strong password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          [class.invalid]="f.password.touched && f.password.invalid"
+        />
+        <span *ngIf="f.password.touched && f.password.invalid" class="alert1">
+          <span *ngIf="f.password.errors?.required">Password is required</span>
+          <span *ngIf="f.password.errors?.minlength"
+            >Password must contain minimum 8 characters</span
+          >
+          <span *ngIf="f.password.errors?.maxlength"
+            >Password should not be greater than 16 characters</span
+          >
+        </span>
+      </div>
+      <!--password-->
+      <!--radio-->
+      <div class="input">
+        <p>Are you an agency or individual?</p>
+        <input
+          type="radio"
+          id="individual"
+          formControlName="radiocheck"
+          value="individual"
+        />
+         <label for="individual">Individual</label>    <input
+          type="radio"
+          id="agency"
+          formControlName="radiocheck"
+          value="agency"
+        />
+        <label for="agency">Agency</label>
+        <span
+          *ngIf="f.radiocheck.touched && f.radiocheck.invalid"
+          class="alert1"
+        >
+        </span>
+      </div>
+      <!--radio-->
+      <button type="submit" [disabled]="form.invalid" (click)="submit()">
+        Submit
+      </button>
+    </form>
+  </div>
+  <!--form section start-->
+</div>
+<!--main centre div end-->

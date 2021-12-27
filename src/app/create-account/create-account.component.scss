@@ -1,0 +1,176 @@
+/***********Common css start*************/
+/* error message css start */
+.alert1 {
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #f04854;
+  border: 1px solid #f04854;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  padding: 10px 11px 10px;
+}
+.invalid {
+  border-color: red !important;
+}
+/* error message css end  */
+
+/* background wave css start */
+.wave-container {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+.wave-container > svg {
+  display: block;
+}
+/* background wave css end */
+
+/*form css start*/
+.account_form {
+  background-color: white;
+  padding: 1%;
+}
+.account_form h4 {
+  font-size: 22px;
+  margin-bottom: 9%;
+}
+form {
+  padding: 9% 6%;
+}
+input[type="text"],
+input[type="date"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px auto 27px auto;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+label {
+  font-weight: 600;
+  font-size: 16px;
+}
+input[type="radio"] {
+  margin: 19px auto;
+}
+//button css
+button {
+  background: dodgerblue;
+  color: white;
+  padding: 10px 40px;
+  font-size: 17px;
+  width: 50%;
+  border: 1px solid dodgerblue;
+  margin: 8px 0;
+  cursor: pointer;
+}
+[disabled]:hover {
+  opacity: 0.2;
+  cursor: no-drop;
+}
+/*form css end*/
+
+/*sidebar css start*/
+.inner_sidebar h1 {
+  line-height: 65px;
+}
+
+.sidebar_section {
+  color: white;
+  background-image: url("/assets/images/sidebar.jpg");
+  background-size: cover;
+}
+/*sidebar css end*/
+
+/***********Common css end*************/
+
+/***********css for tab, laptop, desktop start*************/
+
+@media (min-width: 951px) {
+
+  //main centre div css
+  .main {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 78%;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 24%);
+  }
+  .main div {
+    flex: 1;
+  }
+  //background wave css
+  .wave-container {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  .wave-container > svg {
+    display: block;
+  }
+  //sidebar css
+  .inner_sidebar {
+    padding: 46% 10%;
+  }
+
+  //error message css
+  .alert1 {
+    float: right;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 1%;
+    width: 30%;
+  }
+  .alert1:after,
+  .alert1:before {
+    content: "";
+    border: 7px solid transparent;
+    position: absolute;
+    top: 3px;
+  }
+  .alert1:after {
+    border-right: 7px solid #f04854;
+    left: -14px;
+  }
+  .alert1:before {
+    border-right: 7px solid #f04854;
+    left: -15px;
+  }
+}
+
+/***********css for tab, laptop, desktop end*************/
+
+/***********css for mobile start*************/
+
+@media (max-width: 950px) {
+
+  //background wave css
+  .wave-container {
+    display: none;
+  }
+
+  //sidebar css
+  .sidebar_section {
+    background-position-y: bottom;
+  }
+  .inner_sidebar {
+    padding: 14% 10%;
+  }
+  //form css
+  .input {
+    margin-bottom: 7%;
+  }
+  input {
+    margin: 10px auto 15px auto !important;
+  }
+}
+/***********css for mobile end*************/
